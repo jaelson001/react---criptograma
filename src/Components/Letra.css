@@ -1,0 +1,16 @@
+.letra {
+  display: flex;
+  flex-flow: column wrap;
+  width: 20px;
+  padding: 5px;
+  justify-content: stretch;
+  font-size: 1.2rem;
+  margin:8px;
+}
+.letra > input {
+  display: flex;
+  width: 20px;
+  padding: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+}
