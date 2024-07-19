@@ -38,8 +38,12 @@ function App() {
       return c; 
   }
 
-  const checar = (atual) => {
+  const checar = (validade, chave, valor) => {
     let invalid = 0
+    document.querySelectorAll(`input[keyset="${chave}"]`).forEach((item) => {
+      item.setAttribute('isvalid', validade);
+      item.value = valor;
+    })
     setTimeout(() => {
       document.querySelectorAll(`input[type="text"]`).forEach((item) => {
         invalid += item.getAttribute('isvalid') == "false" ? 1 : 0;

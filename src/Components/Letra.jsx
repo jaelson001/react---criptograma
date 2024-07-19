@@ -7,13 +7,12 @@ const Letra = (props) => {
 	const [valid, setValid] = useState("false")
 
 	const check = function(event){
-		let l = event.target.value.toUpperCase();
+		let l = event.nativeEvent.data.toUpperCase();
 		setLetraDigitada(l)
 		let aux = l == props.letra.toUpperCase() ? "true" : "false";
 		setValid(aux);
-		props.checar(aux);
+		props.checar(aux, props.chave, l);
 		event.target.parentNode.nextSibling.children[0].focus()
-		//event.target.dispatchEvent(new KeyboardEvent('keydown', {'key': 'Tab'}));
 	}
 
 	return (
